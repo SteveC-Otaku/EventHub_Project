@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWings Airlines - Wings to Your Dreams</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Top Info Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <div class="phone">
+                        <i class="fas fa-phone"></i>
+                        <span>Customer Service: 1800-123-4567</span>
+                    </div>
+                    <div class="language">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-selector">
+                            <option value="en">English</option>
+                            <option value="zh">简体中文</option>
+                            <option value="ja">日本語</option>
+                            <option value="ko">한국어</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="help.html">Help Center</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="main-header container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">SkyWings</span>
+                    <span class="logo-subtext">Airlines</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="check-in.html">Check-in</a></li>
+                    <li><a href="manage-booking.html">Manage Booking</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">Membership <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="membership.html">Membership Program</a></li>
+                            <li><a href="miles.html">Miles Redemption</a></li>
+                            <li><a href="lounges.html">Airport Lounges</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Actions -->
+            <div class="user-actions">
+                <a href="search.html" class="icon-button">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="login.html" class="login-button">
+                    <i class="fas fa-user"></i> Login / Register
+                </a>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
+            <ul>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="flights.html">Flights</a></li>
+                <li><a href="check-in.html">Check-in</a></li>
+                <li><a href="manage-booking.html">Manage Booking</a></li>
+                <li class="mobile-dropdown">
+                    <a href="javascript:void(0)">Membership <i class="fas fa-chevron-down"></i></a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="miles.html">Miles Redemption</a></li>
+                        <li><a href="lounges.html">Airport Lounges</a></li>
+                    </ul>
+                </li>
+                <li><a href="login.html">Login / Register</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Explore the World, Take Off from Here</h1>
+                <p>SkyWings Airlines, Wings to Your Dreams</p>
+                
+                <!-- Search Card -->
+                <div class="search-card">
+                    <div class="search-tabs">
+                        <button class="tab-button active" data-tab="flights">Flights</button>
+                        <button class="tab-button" data-tab="hotels">Hotels</button>
+                        <button class="tab-button" data-tab="packages">Packages</button>
+                        <button class="tab-button" data-tab="cars">Car Rental</button>
+                    </div>
+                    
+                    <!-- Flight Search -->
+                    <div class="tab-content active" id="flights-tab">
+                        <form id="flight-search-form">
+                            <div class="trip-type">
+                                <label>
+                                    <input type="radio" name="trip-type" value="roundTrip" checked> Round Trip
+                                </label>
+                                <label>
+                                    <input type="radio" name="trip-type" value="oneWay"> One Way
+                                </label>
+                                <label>
+                                    <input type="radio" name="trip-type" value="multiCity"> Multi-City
+                                </label>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group location-group">
+                                    <label for="origin">From</label>
+                                    <input type="text" id="origin" placeholder="City or Airport" value="Sydney" required>
+                                    <button type="button" id="swap-locations" class="swap-button">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="form-group">
+                                    <label for="destination">To</label>
+                                    <input type="text" id="destination" placeholder="City or Airport" value="Melbourne" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="depart-date">Departure Date</label>
+                                    <input type="date" id="depart-date" required>
+                                </div>
+                                <div class="form-group" id="return-date-group">
+                                    <label for="return-date">Return Date</label>
+                                    <input type="date" id="return-date">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="passengers">Passengers</label>
+                                    <select id="passengers" required>
+                                        <option value="1">1 Passenger</option>
+                                        <option value="2">2 Passengers</option>
+                                        <option value="3">3 Passengers</option>
+                                        <option value="4">4 Passengers</option>
+                                        <option value="5">5 Passengers</option>
+                                        <option value="6">6 Passengers</option>
+                                        <option value="7">7 Passengers</option>
+                                        <option value="8">8 Passengers</option>
+                                        <option value="9">9 Passengers</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cabin-class">Cabin Class</label>
+                                    <select id="cabin-class">
+                                        <option value="economy">Economy</option>
+                                        <option value="premium-economy">Premium Economy</option>
+                                        <option value="business">Business</option>
+                                        <option value="first">First Class</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i> Search Flights
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Other Tab Content -->
+                    <div class="tab-content" id="hotels-tab">
+                        <div class="coming-soon">
+                            <i class="fas fa-hotel" style="font-size: 48px; margin-bottom: 20px;"></i>
+                            <h3>Hotel Search Coming Soon</h3>
+                            <p>We're working to provide you with the best hotel booking experience</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="packages-tab">
+                        <div class="coming-soon">
+                            <i class="fas fa-suitcase" style="font-size: 48px; margin-bottom: 20px;"></i>
+                            <h3>Travel Packages Coming Soon</h3>
+                            <p>We're working to provide you with the best travel package experience</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="cars-tab">
+                        <div class="coming-soon">
+                            <i class="fas fa-car" style="font-size: 48px; margin-bottom: 20px;"></i>
+                            <h3>Car Rental Coming Soon</h3>
+                            <p>We're working to provide you with the best car rental experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="destinations">
+        <div class="container">
+            <h2 class="section-title">Popular Destinations</h2>
+            <div class="destination-grid">
+                <a href="flights.html?destination=melbourne" class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://via.placeholder.com/300x180?text=Melbourne" alt="Melbourne">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Melbourne</h3>
+                        <p>Cultural capital with vibrant laneways</p>
+                        <div class="price">$180 from</div>
+                    </div>
+                </a>
+                
+                <a href="flights.html?destination=brisbane" class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://via.placeholder.com/300x180?text=Brisbane" alt="Brisbane">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Brisbane</h3>
+                        <p>Sunshine and subtropical climate</p>
+                        <div class="price">$150 from</div>
+                    </div>
+                </a>
+                
+                <a href="flights.html?destination=gold-coast" class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://via.placeholder.com/300x180?text=Gold+Coast" alt="Gold Coast">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Gold Coast</h3>
+                        <p>Surf, sand, and theme parks</p>
+                        <div class="price">$190 from</div>
+                    </div>
+                </a>
+                
+                <a href="flights.html?destination=perth" class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://via.placeholder.com/300x180?text=Perth" alt="Perth">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Perth</h3>
+                        <p>Stunning beaches and relaxed lifestyle</p>
+                        <div class="price">$220 from</div>
+                    </div>
+                </a>
+                
+                <a href="flights.html?destination=adelaide" class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://via.placeholder.com/300x180?text=Adelaide" alt="Adelaide">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Adelaide</h3>
+                        <p>Wine regions and festival city</p>
+                        <div class="price">$200 from</div>
+                    </div>
+                </a>
+                
+                <a href="flights.html?destination=cairns" class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://via.placeholder.com/300x180?text=Cairns" alt="Cairns">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Cairns</h3>
+                        <p>Gateway to the Great Barrier Reef</p>
+                        <div class="price">$250 from</div>
+                    </div>
+                </a>
+                
+                <a href="flights.html?destination=hobart" class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://via.placeholder.com/300x180?text=Hobart" alt="Hobart">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Hobart</h3>
+                        <p>Historic waterfront and MONA</p>
+                        <div class="price">$230 from</div>
+                    </div>
+                </a>
+                
+                <a href="flights.html?destination=auckland" class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://via.placeholder.com/300x180?text=Auckland" alt="Auckland">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Auckland</h3>
+                        <p>City of Sails across the Tasman</p>
+                        <div class="price">$320 from</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="offers">
+        <div class="container">
+            <h2 class="section-title">Special Offers</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="https://via.placeholder.com/400x150?text=Early+Bird+Offer" alt="Early Bird Offer">
+                    </div>
+                    <div class="offer-info">
+                        <h3>Early Bird Offer</h3>
+                        <p>Book 30 days in advance and enjoy up to 20% discount</p>
+                        <a href="offers.html" class="btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="https://via.placeholder.com/400x150?text=Family+Package" alt="Family Package">
+                    </div>
+                    <div class="offer-info">
+                        <h3>Family Package</h3>
+                        <p>2 adults + 1 child, children enjoy half price</p>
+                        <a href="offers.html" class="btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="https://via.placeholder.com/400x150?text=Weekend+Getaway" alt="Weekend Getaway">
+                    </div>
+                    <div class="offer-info">
+                        <h3>Weekend Getaway</h3>
+                        <p>Depart Friday, return Sunday, enjoy special pricing</p>
+                        <a href="offers.html" class="btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>In-flight Dining</h3>
+                    <p>Curated menu to satisfy your taste buds, with special meal options available</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>In-flight Wi-Fi</h3>
+                    <p>High-speed in-flight Wi-Fi to keep you connected in the clouds</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3>Entertainment System</h3>
+                    <p>Latest movies, music, and games to make your journey enjoyable</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-suitcase"></i>
+                    </div>
+                    <h3>Baggage Service</h3>
+                    <p>Flexible baggage policy, pre-purchase extra baggage for better rates</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <h3>Special Assistance</h3>
+                    <p>Dedicated service for passengers requiring special assistance</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Child Services</h3>
+                    <p>Special services for young travelers to make their journey pleasant</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download -->
+    <section class="app-download">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-info">
+                    <h2>Download Our App</h2>
+                    <p>Manage your trips on the go, get real-time flight information, and enjoy exclusive mobile offers</p>
+                    <div class="app-buttons">
+                        <a href="#" class="btn-outline-light">
+                            <i class="fab fa-apple"></i> App Store
+                        </a>
+                        <a href="#" class="btn-outline-light">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </a>
+                    </div>
+                </div>
+                <div class="app-image">
+                    <img src="https://via.placeholder.com/300x500?text=App+Screenshot" alt="App Screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-main container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="about.html">Company Profile</a></li>
+                    <li><a href="fleet.html">Fleet Information</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="news.html">News Center</a></li>
+                    <li><a href="responsibility.html">Social Responsibility</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Passenger Services</h3>
+                <ul>
+                    <li><a href="baggage.html">Baggage Information</a></li>
+                    <li><a href="special-assistance.html">Special Assistance</a></li>
+                    <li><a href="inflight.html">In-flight Services</a></li>
+                    <li><a href="seat-selection.html">Seat Selection</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Membership</h3>
+                <ul>
+                    <li><a href="membership-benefits.html">Membership Benefits</a></li>
+                    <li><a href="earn-miles.html">Earn Miles</a></li>
+                    <li><a href="redeem-miles.html">Redeem Miles</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="elite-status.html">Elite Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>1800-123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>service@skywings.com</span>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Subscribe to Newsletter</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year"></span> SkyWings Airlines. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                    <a href="legal.html">Legal Notice</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

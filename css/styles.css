@@ -1,0 +1,1760 @@
+/* 全局样式 */
+:root {
+    --primary-color: #0066cc;
+    --primary-dark: #004d99;
+    --primary-light: #e6f0ff;
+    --secondary-color: #ff9900;
+    --text-color: #333333;
+    --text-light: #666666;
+    --text-lighter: #999999;
+    --background-color: #ffffff;
+    --background-light: #f5f5f5;
+    --border-color: #dddddd;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-light);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button, .btn-primary, .btn-outline, .btn-outline-light {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-outline-light {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.page-title {
+    margin: 30px 0;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* 头部样式 */
+header {
+    background-color: var(--background-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 顶部信息栏 */
+.top-bar {
+    background-color: var(--background-light);
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-left, .top-bar-right {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-left > div, .top-bar-right > a {
+    margin-right: 20px;
+}
+
+.top-bar-left > div:last-child, .top-bar-right > a:last-child {
+    margin-right: 0;
+}
+
+.top-bar-right a {
+    color: var(--text-light);
+}
+
+.top-bar-right a:hover {
+    color: var(--primary-color);
+}
+
+.phone, .language {
+    display: flex;
+    align-items: center;
+}
+
+.phone i, .language i {
+    margin-right: 5px;
+}
+
+#language-selector {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 0;
+    width: auto;
+}
+
+/* 主导航 */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo-text {
+    color: var(--primary-color);
+}
+
+.logo-subtext {
+    color: var(--text-light);
+    margin-left: 5px;
+}
+
+/* 桌面导航 */
+.desktop-nav {
+    display: flex;
+}
+
+.desktop-nav ul {
+    display: flex;
+    align-items: center;
+}
+
+.desktop-nav li {
+    position: relative;
+    margin-right: 20px;
+}
+
+.desktop-nav li:last-child {
+    margin-right: 0;
+}
+
+.desktop-nav a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 10px 0;
+    display: block;
+}
+
+.desktop-nav a:hover, .desktop-nav li.active a {
+    color: var(--primary-color);
+}
+
+.desktop-nav .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    min-width: 200px;
+    display: none;
+    z-index: 100;
+}
+
+.desktop-nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.desktop-nav .dropdown-menu li {
+    margin: 0;
+}
+
+.desktop-nav .dropdown-menu a {
+    padding: 10px 15px;
+}
+
+.desktop-nav .dropdown-menu a:hover {
+    background-color: var(--primary-light);
+}
+
+/* 用户操作 */
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 8px 15px;
+}
+
+.login-button i {
+    margin-right: 8px;
+}
+
+.login-button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 移动导航 */
+.mobile-nav {
+    display: none;
+    background-color: white;
+    border-top: 1px solid var(--border-color);
+    padding: 15px 0;
+}
+
+.mobile-nav ul {
+    padding: 0 15px;
+}
+
+.mobile-nav li {
+    margin-bottom: 15px;
+}
+
+.mobile-nav li:last-child {
+    margin-bottom: 0;
+}
+
+.mobile-nav a {
+    color: var(--text-color);
+    font-weight: 500;
+    display: block;
+    padding: 5px 0;
+}
+
+.mobile-nav a:hover, .mobile-nav li.active a {
+    color: var(--primary-color);
+}
+
+.mobile-dropdown-menu {
+    margin-top: 10px;
+    margin-left: 15px;
+    display: none;
+}
+
+.mobile-dropdown.active .mobile-dropdown-menu {
+    display: block;
+}
+
+/* 英雄区域 */
+.hero {
+    background: linear-gradient(to right, #004d99, #0066cc);
+    color: white;
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://via.placeholder.com/1200x600');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* 搜索卡片 */
+.search-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-light);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.trip-type {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.trip-type label {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.trip-type input {
+    margin-right: 5px;
+    width: auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.location-group {
+    position: relative;
+}
+
+.swap-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.search-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button i {
+    margin-right: 8px;
+}
+
+.search-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.coming-soon {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-light);
+}
+
+/* 热门目的地 */
+.destinations {
+    padding: 60px 0;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.destination-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: block;
+    color: var(--text-color);
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.destination-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.destination-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.destination-card:hover .destination-image img {
+    transform: scale(1.05);
+}
+
+.destination-info {
+    padding: 15px;
+}
+
+.destination-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.destination-info p {
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.destination-info .price {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* 特别优惠 */
+.offers {
+    background-color: var(--background-light);
+    padding: 60px 0;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.offer-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.offer-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.offer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.offer-info {
+    padding: 20px;
+}
+
+.offer-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.offer-info p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+/* 服务 */
+.services {
+    padding: 60px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.service-icon i {
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+.service-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--text-light);
+}
+
+/* 应用下载 */
+.app-download {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 0;
+}
+
+.app-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-info {
+    flex: 1;
+}
+
+.app-info h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.app-info p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.app-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.app-image {
+    flex: 1;
+    text-align: center;
+}
+
+.app-image img {
+    max-height: 400px;
+}
+
+/* 页脚 */
+footer {
+    background-color: #222;
+    color: white;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 60px 0;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
+.contact-info {
+    color: #ccc;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-item i {
+    margin-right: 10px;
+}
+
+.newsletter h4, .social-media h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.newsletter-form {
+    display: flex;
+}
+
+.newsletter-form input {
+    flex: 1;
+    background-color: #333;
+    border: none;
+    color: white;
+}
+
+.newsletter-form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    width: 36px;
+    height: 36px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+}
+
+.footer-bottom {
+    background-color: #111;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-bottom p {
+    margin-bottom: 10px;
+    color: #999;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #999;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* 航班搜索结果页 */
+.search-summary {
+    background-color: var(--primary-light);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.route {
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.route i {
+    margin: 0 10px;
+}
+
+.date, .passengers {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.date i, .passengers i {
+    margin-right: 5px;
+}
+
+.filter-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-label {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.filter-label i {
+    margin-right: 5px;
+}
+
+.filter-button {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.sort {
+    display: flex;
+    align-items: center;
+}
+
+.sort span {
+    margin-right: 10px;
+}
+
+.sort select {
+    width: auto;
+    padding: 5px 10px;
+}
+
+.flight-tabs {
+    margin-bottom: 40px;
+}
+
+.flight-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flight-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flight-main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.airline-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.airline {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.flight-number, .aircraft {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.flight-time-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.departure, .arrival {
+    text-align: center;
+}
+
+.time {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.city {
+    font-size: 14px;
+}
+
+.flight-path {
+    flex: 1;
+    margin: 0 20px;
+    position: relative;
+}
+
+.path-line {
+    position: relative;
+    height: 2px;
+    background-color: var(--border-color);
+    margin: 10px 0;
+}
+
+.path-line i {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+}
+
+.duration {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 0 10px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.stops {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.price-booking {
+    text-align: right;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.price-note {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.flight-details {
+    border-top: 1px solid var(--border-color);
+    padding: 10px 20px;
+    background-color: var(--background-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.details-toggle {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.flight-features {
+    display: flex;
+    gap: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.feature i {
+    margin-right: 5px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 50px 0;
+    color: var(--text-light);
+}
+
+/* 预订页面 */
+.booking-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.progress-step.active .step-number {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.step-label {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.progress-step.active .step-label {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.progress-line {
+    width: 100px;
+    height: 2px;
+    background-color: var(--background-light);
+    margin: 0 10px;
+}
+
+.progress-line.active {
+    background-color: var(--primary-color);
+}
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.booking-main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.booking-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: var(--primary-light);
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.flight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.flight-date {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.flight-date i {
+    margin-right: 5px;
+}
+
+.seat-selection-info {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.seat-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.seat-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.seat-icon.available {
+    background-color: #3498db;
+}
+
+.seat-icon.occupied {
+    background-color: #95a5a6;
+}
+
+.seat-icon.premium {
+    background-color: #9b59b6;
+}
+
+.seat-icon.exit {
+    background-color: #2ecc71;
+}
+
+.seat-icon.selected {
+    background-color: #f1c40f;
+}
+
+.aircraft-head {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.cockpit {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-90deg);
+}
+
+.seat-map-container {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+.seat-letters {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    width: 300px;
+    margin: 0 auto 10px;
+    text-align: center;
+}
+
+.seat-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.seat-row {
+    display: flex;
+    align-items: center;
+}
+
+.row-number {
+    width: 30px;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.seats {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    width: 300px;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.seat.available {
+    background-color: #3498db;
+}
+
+.seat.occupied {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+.seat.premium {
+    background-color: #9b59b6;
+}
+
+.seat.exit {
+    background-color: #2ecc71;
+}
+
+.seat.selected {
+    background-color: #f1c40f;
+}
+
+.seat-selection-summary {
+    background-color: var(--background-light);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.seat-selection-summary h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.selected-seats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.selected-seat-tag {
+    background-color: #f1c40f;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.empty-selection {
+    color: var(--text-light);
+}
+
+.seat-price-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.booking-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.booking-sidebar .booking-card {
+    position: sticky;
+    top: 20px;
+}
+
+.price-summary {
+    margin-bottom: 20px;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.price-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 18px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.booking-notice {
+    background-color: var(--primary-light);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.notice-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.booking-notice ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.booking-notice li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.payment-methods {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.payment-methods i {
+    margin-right: 8px;
+}
+
+/* 我的行程页面 */
+.trip-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.trip-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.trip-header {
+    background-color: var(--primary-light);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-id {
+    font-weight: 600;
+}
+
+.trip-status {
+    display: flex;
+    align-items: center;
+}
+
+.trip-status i {
+    margin-right: 5px;
+}
+
+.trip-status.confirmed {
+    color: var(--success-color);
+}
+
+.trip-status.completed {
+    color: var(--text-light);
+}
+
+.trip-content {
+    padding: 20px;
+}
+
+.trip-flight {
+    margin-bottom: 20px;
+}
+
+.flight-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.trip-details {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.detail-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.detail-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+.detail-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    color: var(--text-color);
+}
+
+.detail-value.price {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.trip-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.empty-icon {
+    font-size: 48px;
+    color: var(--text-lighter);
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+/* 登录页面 */
+.login-container {
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.login-tabs {
+    margin-bottom: 30px;
+}
+
+.login-form {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.password-group {
+    position: relative;
+}
+
+.forgot-password {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.social-login {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-login-divider {
+    position: relative;
+    margin: 30px 0;
+}
+
+.social-login-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.social-login-divider span {
+    position: relative;
+    background-color: white;
+    padding: 0 15px;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.social-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.social-button {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.social-button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+
+    .flight-main {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .price-booking {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .app-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .app-info {
+        text-align: center;
+    }
+
+    .app-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .top-bar-right {
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .search-summary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-info {
+        margin-bottom: 15px;
+    }
+
+    .filter-sort {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sort {
+        margin-top: 15px;
+    }
+
+    .flight-time-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .flight-path {
+        width: 100%;
+        margin: 0;
+    }
+
+    .path-line {
+        width: 2px;
+        height: 50px;
+        margin: 0 auto;
+    }
+
+    .path-line i {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .duration {
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .login-button span {
+        display: none;
+    }
+
+    .social-buttons {
+        grid-template-columns: 1fr;
+    }
+}

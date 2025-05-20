@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search Results - SkyWings Airlines</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Top Info Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <div class="phone">
+                        <i class="fas fa-phone"></i>
+                        <span>Customer Service: 1800-123-4567</span>
+                    </div>
+                    <div class="language">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-selector">
+                            <option value="en">English</option>
+                            <option value="zh">简体中文</option>
+                            <option value="ja">日本語</option>
+                            <option value="ko">한국어</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="help.html">Help Center</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="main-header container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">SkyWings</span>
+                    <span class="logo-subtext">Airlines</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="flights.html">Flights</a></li>
+                    <li><a href="check-in.html">Check-in</a></li>
+                    <li><a href="manage-booking.html">Manage Booking</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">Membership <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="membership.html">Membership Program</a></li>
+                            <li><a href="miles.html">Miles Redemption</a></li>
+                            <li><a href="lounges.html">Airport Lounges</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Actions -->
+            <div class="user-actions">
+                <a href="search.html" class="icon-button">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="login.html" class="login-button">
+                    <i class="fas fa-user"></i> Login / Register
+                </a>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="flights.html">Flights</a></li>
+                <li><a href="check-in.html">Check-in</a></li>
+                <li><a href="manage-booking.html">Manage Booking</a></li>
+                <li class="mobile-dropdown">
+                    <a href="javascript:void(0)">Membership <i class="fas fa-chevron-down"></i></a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="miles.html">Miles Redemption</a></li>
+                        <li><a href="lounges.html">Airport Lounges</a></li>
+                    </ul>
+                </li>
+                <li><a href="login.html">Login / Register</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">Flight Search Results</h1>
+
+        <!-- Search Summary -->
+        <div class="search-summary">
+            <div class="search-info">
+                <div class="route">
+                    <span id="origin-display">Sydney</span>
+                    <i class="fas fa-arrow-right"></i>
+                    <span id="destination-display">Melbourne</span>
+                </div>
+                <div class="date">
+                    <i class="fas fa-calendar"></i>
+                    <span id="date-display">2023-06-15</span>
+                </div>
+                <div class="passengers">
+                    <i class="fas fa-user"></i>
+                    <span id="passengers-display">1 Passenger</span>
+                </div>
+            </div>
+            <button class="btn-outline modify-search">
+                <i class="fas fa-edit"></i> Modify Search
+            </button>
+        </div>
+
+        <!-- Filter and Sort -->
+        <div class="filter-sort">
+            <div class="filters">
+                <div class="filter-label">
+                    <i class="fas fa-filter"></i>
+                    <span>Filter:</span>
+                </div>
+                <button class="filter-button">Direct</button>
+                <button class="filter-button">Morning Departure</button>
+                <button class="filter-button">Afternoon Departure</button>
+                <button class="filter-button">Evening Departure</button>
+                <button class="filter-button">Price < $200</button>
+            </div>
+            <div class="sort">
+                <span>Sort:</span>
+                <select id="sort-select">
+                    <option value="price-asc">Price (Low to High)</option>
+                    <option value="price-desc">Price (High to Low)</option>
+                    <option value="time-asc">Departure Time (Early to Late)</option>
+                    <option value="duration-asc">Flight Duration (Short to Long)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Flight Tabs -->
+        <div class="flight-tabs">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="depart">Outbound Flight</button>
+                <button class="tab-button" data-tab="return">Return Flight</button>
+            </div>
+
+            <!-- Outbound Flight Tab Content -->
+            <div class="tab-content active" id="depart-tab">
+                <div class="flight-list">
+                    <!-- Flight Card 1 -->
+                    <div class="flight-card">
+                        <div class="flight-main">
+                            <div class="airline-info">
+                                <div class="airline">SkyWings Airlines</div>
+                                <div class="flight-number">Flight: SK1234</div>
+                                <div class="aircraft">Boeing 737-800</div>
+                            </div>
+                            <div class="flight-time-info">
+                                <div class="departure">
+                                    <div class="time">07:30</div>
+                                    <div class="city">Sydney</div>
+                                </div>
+
+                                <div class="flight-path">
+                                    <div class="path-line">
+                                        <i class="fas fa-plane"></i>
+                                        <span class="duration">1h 30m</span>
+                                    </div>
+                                    <div class="stops">Direct</div>
+                                </div>
+
+                                <div class="arrival">
+                                    <div class="time">09:00</div>
+                                    <div class="city">Melbourne</div>
+                                </div>
+                            </div>
+                            <div class="price-booking">
+                                <div class="price">$180</div>
+                                <div class="price-note">Taxes included</div>
+                                <a href="booking.html?flight=SK1234" class="btn-primary">Select</a>
+                            </div>
+                        </div>
+                        <div class="flight-details">
+                            <button class="details-toggle">View Details</button>
+                            <div class="flight-features">
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    Includes 20kg checked baggage
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-utensils"></i>
+                                    Meal included
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-wifi"></i>
+                                    In-flight Wi-Fi
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tv"></i>
+                                    In-flight entertainment
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-clock"></i>
+                                    On-time performance: 92%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flight Card 2 -->
+                    <div class="flight-card">
+                        <div class="flight-main">
+                            <div class="airline-info">
+                                <div class="airline">SkyWings Airlines</div>
+                                <div class="flight-number">Flight: SK1236</div>
+                                <div class="aircraft">Airbus A320</div>
+                            </div>
+                            <div class="flight-time-info">
+                                <div class="departure">
+                                    <div class="time">10:15</div>
+                                    <div class="city">Sydney</div>
+                                </div>
+
+                                <div class="flight-path">
+                                    <div class="path-line">
+                                        <i class="fas fa-plane"></i>
+                                        <span class="duration">1h 25m</span>
+                                    </div>
+                                    <div class="stops">Direct</div>
+                                </div>
+
+                                <div class="arrival">
+                                    <div class="time">11:40</div>
+                                    <div class="city">Melbourne</div>
+                                </div>
+                            </div>
+                            <div class="price-booking">
+                                <div class="price">$195</div>
+                                <div class="price-note">Taxes included</div>
+                                <a href="booking.html?flight=SK1236" class="btn-primary">Select</a>
+                            </div>
+                        </div>
+                        <div class="flight-details">
+                            <button class="details-toggle">View Details</button>
+                            <div class="flight-features">
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    Includes 20kg checked baggage
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-utensils"></i>
+                                    Meal included
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-wifi"></i>
+                                    In-flight Wi-Fi
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tv"></i>
+                                    In-flight entertainment
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-clock"></i>
+                                    On-time performance: 89%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flight Card 3 -->
+                    <div class="flight-card">
+                        <div class="flight-main">
+                            <div class="airline-info">
+                                <div class="airline">SkyWings Airlines</div>
+                                <div class="flight-number">Flight: SK1238</div>
+                                <div class="aircraft">Boeing 737-800</div>
+                            </div>
+                            <div class="flight-time-info">
+                                <div class="departure">
+                                    <div class="time">13:45</div>
+                                    <div class="city">Sydney</div>
+                                </div>
+
+                                <div class="flight-path">
+                                    <div class="path-line">
+                                        <i class="fas fa-plane"></i>
+                                        <span class="duration">1h 35m</span>
+                                    </div>
+                                    <div class="stops">Direct</div>
+                                </div>
+
+                                <div class="arrival">
+                                    <div class="time">15:20</div>
+                                    <div class="city">Melbourne</div>
+                                </div>
+                            </div>
+                            <div class="price-booking">
+                                <div class="price">$165</div>
+                                <div class="price-note">Taxes included</div>
+                                <a href="booking.html?flight=SK1238" class="btn-primary">Select</a>
+                            </div>
+                        </div>
+                        <div class="flight-details">
+                            <button class="details-toggle">View Details</button>
+                            <div class="flight-features">
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    Includes 20kg checked baggage
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-utensils"></i>
+                                    Meal included
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-wifi"></i>
+                                    In-flight Wi-Fi
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tv"></i>
+                                    In-flight entertainment
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-clock"></i>
+                                    On-time performance: 94%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flight Card 4 -->
+                    <div class="flight-card">
+                        <div class="flight-main">
+                            <div class="airline-info">
+                                <div class="airline">SkyWings Airlines</div>
+                                <div class="flight-number">Flight: SK1240</div>
+                                <div class="aircraft">Airbus A320</div>
+                            </div>
+                            <div class="flight-time-info">
+                                <div class="departure">
+                                    <div class="time">17:30</div>
+                                    <div class="city">Sydney</div>
+                                </div>
+
+                                <div class="flight-path">
+                                    <div class="path-line">
+                                        <i class="fas fa-plane"></i>
+                                        <span class="duration">1h 30m</span>
+                                    </div>
+                                    <div class="stops">Direct</div>
+                                </div>
+
+                                <div class="arrival">
+                                    <div class="time">19:00</div>
+                                    <div class="city">Melbourne</div>
+                                </div>
+                            </div>
+                            <div class="price-booking">
+                                <div class="price">$210</div>
+                                <div class="price-note">Taxes included</div>
+                                <a href="booking.html?flight=SK1240" class="btn-primary">Select</a>
+                            </div>
+                        </div>
+                        <div class="flight-details">
+                            <button class="details-toggle">View Details</button>
+                            <div class="flight-features">
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    Includes 20kg checked baggage
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-utensils"></i>
+                                    Meal included
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-wifi"></i>
+                                    In-flight Wi-Fi
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tv"></i>
+                                    In-flight entertainment
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-clock"></i>
+                                    On-time performance: 91%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Return Flight Tab Content -->
+            <div class="tab-content" id="return-tab">
+                <div class="flight-list">
+                    <!-- Flight Card 1 -->
+                    <div class="flight-card">
+                        <div class="flight-main">
+                            <div class="airline-info">
+                                <div class="airline">SkyWings Airlines</div>
+                                <div class="flight-number">Flight: SK1235</div>
+                                <div class="aircraft">Boeing 737-800</div>
+                            </div>
+                            <div class="flight-time-info">
+                                <div class="departure">
+                                    <div class="time">08:30</div>
+                                    <div class="city">Melbourne</div>
+                                </div>
+
+                                <div class="flight-path">
+                                    <div class="path-line">
+                                        <i class="fas fa-plane"></i>
+                                        <span class="duration">1h 35m</span>
+                                    </div>
+                                    <div class="stops">Direct</div>
+                                </div>
+
+                                <div class="arrival">
+                                    <div class="time">10:05</div>
+                                    <div class="city">Sydney</div>
+                                </div>
+                            </div>
+                            <div class="price-booking">
+                                <div class="price">$185</div>
+                                <div class="price-note">Taxes included</div>
+                                <a href="booking.html?flight=SK1235" class="btn-primary">Select</a>
+                            </div>
+                        </div>
+                        <div class="flight-details">
+                            <button class="details-toggle">View Details</button>
+                            <div class="flight-features">
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    Includes 20kg checked baggage
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-utensils"></i>
+                                    Meal included
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-wifi"></i>
+                                    In-flight Wi-Fi
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tv"></i>
+                                    In-flight entertainment
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-clock"></i>
+                                    On-time performance: 93%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flight Card 2 -->
+                    <div class="flight-card">
+                        <div class="flight-main">
+                            <div class="airline-info">
+                                <div class="airline">SkyWings Airlines</div>
+                                <div class="flight-number">Flight: SK1237</div>
+                                <div class="aircraft">Airbus A320</div>
+                            </div>
+                            <div class="flight-time-info">
+                                <div class="departure">
+                                    <div class="time">12:15</div>
+                                    <div class="city">Melbourne</div>
+                                </div>
+
+                                <div class="flight-path">
+                                    <div class="path-line">
+                                        <i class="fas fa-plane"></i>
+                                        <span class="duration">1h 30m</span>
+                                    </div>
+                                    <div class="stops">Direct</div>
+                                </div>
+
+                                <div class="arrival">
+                                    <div class="time">13:45</div>
+                                    <div class="city">Sydney</div>
+                                </div>
+                            </div>
+                            <div class="price-booking">
+                                <div class="price">$175</div>
+                                <div class="price-note">Taxes included</div>
+                                <a href="booking.html?flight=SK1237" class="btn-primary">Select</a>
+                            </div>
+                        </div>
+                        <div class="flight-details">
+                            <button class="details-toggle">View Details</button>
+                            <div class="flight-features">
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    Includes 20kg checked baggage
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-utensils"></i>
+                                    Meal included
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-wifi"></i>
+                                    In-flight Wi-Fi
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tv"></i>
+                                    In-flight entertainment
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-clock"></i>
+                                    On-time performance: 90%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flight Card 3 -->
+                    <div class="flight-card">
+                        <div class="flight-main">
+                            <div class="airline-info">
+                                <div class="airline">SkyWings Airlines</div>
+                                <div class="flight-number">Flight: SK1239</div>
+                                <div class="aircraft">Boeing 737-800</div>
+                            </div>
+                            <div class="flight-time-info">
+                                <div class="departure">
+                                    <div class="time">15:45</div>
+                                    <div class="city">Melbourne</div>
+                                </div>
+
+                                <div class="flight-path">
+                                    <div class="path-line">
+                                        <i class="fas fa-plane"></i>
+                                        <span class="duration">1h 40m</span>
+                                    </div>
+                                    <div class="stops">Direct</div>
+                                </div>
+
+                                <div class="arrival">
+                                    <div class="time">17:25</div>
+                                    <div class="city">Sydney</div>
+                                </div>
+                            </div>
+                            <div class="price-booking">
+                                <div class="price">$195</div>
+                                <div class="price-note">Taxes included</div>
+                                <a href="booking.html?flight=SK1239" class="btn-primary">Select</a>
+                            </div>
+                        </div>
+                        <div class="flight-details">
+                            <button class="details-toggle">View Details</button>
+                            <div class="flight-features">
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    Includes 20kg checked baggage
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-utensils"></i>
+                                    Meal included
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-wifi"></i>
+                                    In-flight Wi-Fi
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tv"></i>
+                                    In-flight entertainment
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-clock"></i>
+                                    On-time performance: 88%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flight Card 4 -->
+                    <div class="flight-card">
+                        <div class="flight-main">
+                            <div class="airline-info">
+                                <div class="airline">SkyWings Airlines</div>
+                                <div class="flight-number">Flight: SK1241</div>
+                                <div class="aircraft">Airbus A320</div>
+                            </div>
+                            <div class="flight-time-info">
+                                <div class="departure">
+                                    <div class="time">19:30</div>
+                                    <div class="city">Melbourne</div>
+                                </div>
+
+                                <div class="flight-path">
+                                    <div class="path-line">
+                                        <i class="fas fa-plane"></i>
+                                        <span class="duration">1h 35m</span>
+                                    </div>
+                                    <div class="stops">Direct</div>
+                                </div>
+
+                                <div class="arrival">
+                                    <div class="time">21:05</div>
+                                    <div class="city">Sydney</div>
+                                </div>
+                            </div>
+                            <div class="price-booking">
+                                <div class="price">$170</div>
+                                <div class="price-note">Taxes included</div>
+                                <a href="booking.html?flight=SK1241" class="btn-primary">Select</a>
+                            </div>
+                        </div>
+                        <div class="flight-details">
+                            <button class="details-toggle">View Details</button>
+                            <div class="flight-features">
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    Includes 20kg checked baggage
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-utensils"></i>
+                                    Meal included
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-wifi"></i>
+                                    In-flight Wi-Fi
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tv"></i>
+                                    In-flight entertainment
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-clock"></i>
+                                    On-time performance: 92%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-main container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="about.html">Company Profile</a></li>
+                    <li><a href="fleet.html">Fleet Information</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="news.html">News Center</a></li>
+                    <li><a href="responsibility.html">Social Responsibility</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Passenger Services</h3>
+                <ul>
+                    <li><a href="baggage.html">Baggage Information</a></li>
+                    <li><a href="special-assistance.html">Special Assistance</a></li>
+                    <li><a href="inflight.html">In-flight Services</a></li>
+                    <li><a href="seat-selection.html">Seat Selection</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Membership</h3>
+                <ul>
+                    <li><a href="membership-benefits.html">Membership Benefits</a></li>
+                    <li><a href="earn-miles.html">Earn Miles</a></li>
+                    <li><a href="redeem-miles.html">Redeem Miles</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="elite-status.html">Elite Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>1800-123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>service@skywings.com</span>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Subscribe to Newsletter</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year"></span> SkyWings Airlines. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                    <a href="legal.html">Legal Notice</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/flights.js"></script>
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

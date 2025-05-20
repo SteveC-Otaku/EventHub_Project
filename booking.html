@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Flight - SkyWings Airlines</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Top Info Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <div class="phone">
+                        <i class="fas fa-phone"></i>
+                        <span>Customer Service: 1800-123-4567</span>
+                    </div>
+                    <div class="language">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-selector">
+                            <option value="en">English</option>
+                            <option value="zh">简体中文</option>
+                            <option value="ja">日本語</option>
+                            <option value="ko">한국어</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="help.html">Help Center</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="main-header container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">SkyWings</span>
+                    <span class="logo-subtext">Airlines</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="check-in.html">Check-in</a></li>
+                    <li><a href="manage-booking.html">Manage Booking</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">Membership <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="membership.html">Membership Program</a></li>
+                            <li><a href="miles.html">Miles Redemption</a></li>
+                            <li><a href="lounges.html">Airport Lounges</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Actions -->
+            <div class="user-actions">
+                <a href="search.html" class="icon-button">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="login.html" class="login-button">
+                    <i class="fas fa-user"></i> Login / Register
+                </a>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="flights.html">Flights</a></li>
+                <li><a href="check-in.html">Check-in</a></li>
+                <li><a href="manage-booking.html">Manage Booking</a></li>
+                <li class="mobile-dropdown">
+                    <a href="javascript:void(0)">Membership <i class="fas fa-chevron-down"></i></a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="miles.html">Miles Redemption</a></li>
+                        <li><a href="lounges.html">Airport Lounges</a></li>
+                    </ul>
+                </li>
+                <li><a href="login.html">Login / Register</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">Book Flight</h1>
+
+        <!-- Booking Progress -->
+        <div class="booking-progress">
+            <div class="progress-step active">
+                <div class="step-number">1</div>
+                <div class="step-label">Select Flight</div>
+            </div>
+            <div class="progress-line active"></div>
+            <div class="progress-step active">
+                <div class="step-number">2</div>
+                <div class="step-label">Select Seat</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-number">3</div>
+                <div class="step-label">Passenger Details</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-number">4</div>
+                <div class="step-label">Payment</div>
+            </div>
+        </div>
+
+        <div class="booking-container">
+            <!-- Main Content -->
+            <div class="booking-main">
+                <!-- Flight Details -->
+                <div class="booking-card">
+                    <div class="card-header">
+                        <h2>Flight Details</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="flight-header">
+                            <div>
+                                <div class="airline">SkyWings Airlines</div>
+                                <div class="flight-number">Flight: <span id="flight-id">SK1234</span></div>
+                                <div class="aircraft">Boeing 737-800</div>
+                            </div>
+                            <div class="flight-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>2023-06-15</span>
+                            </div>
+                        </div>
+
+                        <div class="flight-time-info">
+                            <div class="departure">
+                                <div class="time">07:30</div>
+                                <div class="city">Sydney</div>
+                            </div>
+
+                            <div class="flight-path">
+                                <div class="path-line">
+                                    <i class="fas fa-plane"></i>
+                                    <span class="duration">1h 30m</span>
+                                </div>
+                                <div class="stops">Direct</div>
+                            </div>
+
+                            <div class="arrival">
+                                <div class="time">09:00</div>
+                                <div class="city">Melbourne</div>
+                            </div>
+                        </div>
+
+                        <div class="flight-features">
+                            <div class="feature">
+                                <i class="fas fa-suitcase"></i>
+                                Includes 20kg checked baggage
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                On-time performance: 92%
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-info-circle"></i>
+                                Economy Class
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seat Selection -->
+                <div class="booking-card">
+                    <div class="card-header">
+                        <h2>Select Seat</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="seat-selection-info">
+                            Please select your preferred seat. Blue indicates available seats, grey indicates occupied seats.
+                        </div>
+
+                        <!-- Seat Legend -->
+                        <div class="seat-legend">
+                            <div class="legend-item">
+                                <div class="seat-icon available"></div>
+                                <span>Available Seat</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="seat-icon occupied"></div>
+                                <span>Occupied Seat</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="seat-icon premium"></div>
+                                <span>Premium Seat</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="seat-icon exit"></div>
+                                <span>Exit Row Seat</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="seat-icon selected"></div>
+                                <span>Selected Seat</span>
+                            </div>
+                        </div>
+
+                        <!-- Aircraft Head -->
+                        <div class="aircraft-head">
+                            <div class="cockpit">Cockpit</div>
+                        </div>
+
+                        <!-- Seat Map -->
+                        <div class="seat-map-container">
+                            <!-- Seat Letters -->
+                            <div class="seat-letters">
+                                <div>A</div>
+                                <div>B</div>
+                                <div>C</div>
+                                <div>D</div>
+                                <div>E</div>
+                                <div>F</div>
+                            </div>
+
+                            <!-- Seat Grid -->
+                            <div class="seat-grid" id="seat-grid">
+                                <!-- Seats will be dynamically generated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Selection Summary -->
+                        <div class="seat-selection-summary">
+                            <h3>Selected Seats</h3>
+                            <div id="selected-seats-container">
+                                <p class="empty-selection">You haven't selected any seats yet</p>
+                            </div>
+                            <div class="seat-price-total">
+                                <span>Seat Fee Total:</span>
+                                <span id="seat-price-total">$0</span>
+                            </div>
+                        </div>
+
+                        <div class="booking-actions">
+                            <a href="passenger-info.html" class="btn-primary">Continue</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar - Price Summary -->
+            <div class="booking-sidebar">
+                <div class="booking-card sticky">
+                    <div class="card-header">
+                        <h2>Price Summary</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="price-summary">
+                            <div class="price-item">
+                                <span>Base Fare</span>
+                                <span>$150</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Taxes & Fees</span>
+                                <span>$30</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Service Fee</span>
+                                <span>$10</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Seat Selection Fee</span>
+                                <span id="sidebar-seat-fee">$20</span>
+                            </div>
+                            <div class="price-total">
+                                <span>Total</span>
+                                <span id="total-price">$210</span>
+                            </div>
+                        </div>
+
+                        <div class="booking-notice">
+                            <div class="notice-title">Booking Notes:</div>
+                            <ul>
+                                <li>This price is for one-way travel</li>
+                                <li>Includes 20kg checked baggage allowance</li>
+                                <li>Free changes up to 24 hours before departure</li>
+                                <li>Cancellation fees may apply</li>
+                            </ul>
+                        </div>
+
+                        <div class="payment-methods">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Multiple payment methods supported</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-main container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="about.html">Company Profile</a></li>
+                    <li><a href="fleet.html">Fleet Information</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="news.html">News Center</a></li>
+                    <li><a href="responsibility.html">Social Responsibility</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Passenger Services</h3>
+                <ul>
+                    <li><a href="baggage.html">Baggage Information</a></li>
+                    <li><a href="special-assistance.html">Special Assistance</a></li>
+                    <li><a href="inflight.html">In-flight Services</a></li>
+                    <li><a href="seat-selection.html">Seat Selection</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Membership</h3>
+                <ul>
+                    <li><a href="membership-benefits.html">Membership Benefits</a></li>
+                    <li><a href="earn-miles.html">Earn Miles</a></li>
+                    <li><a href="redeem-miles.html">Redeem Miles</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="elite-status.html">Elite Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>1800-123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>service@skywings.com</span>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Subscribe to Newsletter</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year"></span> SkyWings Airlines. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                    <a href="legal.html">Legal Notice</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/seat-selection.js"></script>
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Get flight ID from URL
+        window.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const flightId = urlParams.get('flight');
+            if (flightId) {
+                document.getElementById('flight-id').textContent = flightId;
+            }
+        });
+    </script>
+</body>
+</html>
