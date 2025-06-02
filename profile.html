@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - EventHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <h1>EventHub</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Home</a></li>
+                <li class="header__nav-item"><a href="user-dashboard.html" class="header__nav-link">My Events</a></li>
+                <li class="header__nav-item"><a href="organizer-login.html" class="header__nav-link">Organizer Login</a></li>
+                <li class="header__nav-item" id="login-container">
+                    <a href="#" id="login-button" class="header__nav-link">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="profile">
+            <div class="profile__header">
+                <h2 class="profile__title">My Profile</h2>
+                <nav class="profile__nav">
+                    <a href="profile.html" class="profile__nav-link active">Profile</a>
+                    <a href="settings.html" class="profile__nav-link">Settings</a>
+                </nav>
+            </div>
+
+            <div class="profile__content">
+                <div class="profile__avatar-section">
+                    <div class="profile__avatar-container">
+                        <img src="/placeholder.svg?height=120&width=120" alt="Profile Avatar" class="profile__avatar" id="profile-avatar">
+                        <button class="profile__avatar-upload" id="avatar-upload-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                                <circle cx="12" cy="13" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="profile__status">
+                        <span id="user-status-badge" class="profile__status-badge">Regular User</span>
+                    </div>
+                </div>
+
+                <form id="profile-form" class="profile__form">
+                    <div class="profile__form-section">
+                        <h3 class="profile__section-title">Personal Information</h3>
+                        
+                        <div class="profile__form-group">
+                            <label for="full-name" class="profile__label">Full Name</label>
+                            <input type="text" id="full-name" name="fullName" class="profile__input" required>
+                        </div>
+                        
+                        <div class="profile__form-group">
+                            <label for="email" class="profile__label">Email Address</label>
+                            <input type="email" id="email" name="email" class="profile__input" required>
+                        </div>
+                        
+                        <div class="profile__form-group">
+                            <label for="phone" class="profile__label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="profile__input">
+                        </div>
+                        
+                        <div class="profile__form-group">
+                            <label for="bio" class="profile__label">Bio</label>
+                            <textarea id="bio" name="bio" class="profile__textarea" rows="4" placeholder="Tell us about yourself..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="profile__form-section">
+                        <h3 class="profile__section-title">Preferences</h3>
+                        
+                        <div class="profile__form-group">
+                            <label for="interests" class="profile__label">Interests</label>
+                            <div class="profile__checkbox-group">
+                                <label class="profile__checkbox-label">
+                                    <input type="checkbox" name="interests" value="conferences" class="profile__checkbox">
+                                    <span class="profile__checkbox-text">Conferences</span>
+                                </label>
+                                <label class="profile__checkbox-label">
+                                    <input type="checkbox" name="interests" value="concerts" class="profile__checkbox">
+                                    <span class="profile__checkbox-text">Concerts</span>
+                                </label>
+                                <label class="profile__checkbox-label">
+                                    <input type="checkbox" name="interests" value="workshops" class="profile__checkbox">
+                                    <span class="profile__checkbox-text">Workshops</span>
+                                </label>
+                                <label class="profile__checkbox-label">
+                                    <input type="checkbox" name="interests" value="networking" class="profile__checkbox">
+                                    <span class="profile__checkbox-text">Networking</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="profile__form-group">
+                            <label for="location" class="profile__label">Preferred Location</label>
+                            <input type="text" id="location" name="location" class="profile__input" placeholder="City, State">
+                        </div>
+                    </div>
+
+                    <div class="profile__form-section">
+                        <h3 class="profile__section-title">Statistics</h3>
+                        <div class="profile__stats">
+                            <div class="profile__stat">
+                                <span class="profile__stat-value" id="events-attended">0</span>
+                                <span class="profile__stat-label">Events Attended</span>
+                            </div>
+                            <div class="profile__stat">
+                                <span class="profile__stat-value" id="total-spent">$0</span>
+                                <span class="profile__stat-label">Total Spent</span>
+                            </div>
+                            <div class="profile__stat">
+                                <span class="profile__stat-value" id="member-since">2023</span>
+                                <span class="profile__stat-label">Member Since</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile__actions">
+                        <button type="button" id="cancel-btn" class="button button--secondary">Cancel</button>
+                        <button type="submit" class="button button--primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2023 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-modal-form" class="login__form">
+                <div class="login__form-group">
+                    <label for="login-email" class="login__label">Email</label>
+                    <input type="email" id="login-email" name="email" class="login__input" required>
+                </div>
+                
+                <div class="login__form-group">
+                    <label for="login-password" class="login__label">Password</label>
+                    <input type="password" id="login-password" name="password" class="login__input" required>
+                </div>
+                
+                <div class="login__actions">
+                    <button type="submit" class="button button--primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - EventHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <h1>EventHub</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Home</a></li>
+                <li class="header__nav-item"><a href="user-dashboard.html" class="header__nav-link">My Events</a></li>
+                <li class="header__nav-item"><a href="organizer-login.html" class="header__nav-link">Organizer Login</a></li>
+                <li class="header__nav-item" id="login-container">
+                    <a href="#" id="login-button" class="header__nav-link">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="settings">
+            <div class="settings__header">
+                <h2 class="settings__title">Settings</h2>
+                <nav class="settings__nav">
+                    <a href="profile.html" class="settings__nav-link">Profile</a>
+                    <a href="settings.html" class="settings__nav-link active">Settings</a>
+                </nav>
+            </div>
+
+            <div class="settings__content">
+                <form id="settings-form" class="settings__form">
+                    <div class="settings__section">
+                        <h3 class="settings__section-title">Notifications</h3>
+                        
+                        <div class="settings__form-group">
+                            <label class="settings__toggle-label">
+                                <input type="checkbox" id="email-notifications" class="settings__toggle">
+                                <span class="settings__toggle-slider"></span>
+                                <span class="settings__toggle-text">Email Notifications</span>
+                            </label>
+                            <p class="settings__description">Receive email updates about your events and new opportunities</p>
+                        </div>
+                        
+                        <div class="settings__form-group">
+                            <label class="settings__toggle-label">
+                                <input type="checkbox" id="sms-notifications" class="settings__toggle">
+                                <span class="settings__toggle-slider"></span>
+                                <span class="settings__toggle-text">SMS Notifications</span>
+                            </label>
+                            <p class="settings__description">Get text message reminders about upcoming events</p>
+                        </div>
+                        
+                        <div class="settings__form-group">
+                            <label class="settings__toggle-label">
+                                <input type="checkbox" id="marketing-emails" class="settings__toggle">
+                                <span class="settings__toggle-slider"></span>
+                                <span class="settings__toggle-text">Marketing Emails</span>
+                            </label>
+                            <p class="settings__description">Receive promotional emails about new events and special offers</p>
+                        </div>
+                    </div>
+
+                    <div class="settings__section">
+                        <h3 class="settings__section-title">Privacy</h3>
+                        
+                        <div class="settings__form-group">
+                            <label class="settings__toggle-label">
+                                <input type="checkbox" id="profile-public" class="settings__toggle">
+                                <span class="settings__toggle-slider"></span>
+                                <span class="settings__toggle-text">Public Profile</span>
+                            </label>
+                            <p class="settings__description">Allow other users to see your profile information</p>
+                        </div>
+                        
+                        <div class="settings__form-group">
+                            <label class="settings__toggle-label">
+                                <input type="checkbox" id="show-attendance" class="settings__toggle">
+                                <span class="settings__toggle-slider"></span>
+                                <span class="settings__toggle-text">Show Event Attendance</span>
+                            </label>
+                            <p class="settings__description">Display events you're attending on your public profile</p>
+                        </div>
+                    </div>
+
+                    <div class="settings__section">
+                        <h3 class="settings__section-title">Account</h3>
+                        
+                        <div class="settings__form-group">
+                            <label for="language" class="settings__label">Language</label>
+                            <select id="language" class="settings__select">
+                                <option value="en">English</option>
+                                <option value="es">Español</option>
+                                <option value="fr">Français</option>
+                                <option value="de">Deutsch</option>
+                                <option value="zh">中文</option>
+                            </select>
+                        </div>
+                        
+                        <div class="settings__form-group">
+                            <label for="timezone" class="settings__label">Timezone</label>
+                            <select id="timezone" class="settings__select">
+                                <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                <option value="UTC-7">Mountain Time (UTC-7)</option>
+                                <option value="UTC-6">Central Time (UTC-6)</option>
+                                <option value="UTC-5">Eastern Time (UTC-5)</option>
+                                <option value="UTC+0">UTC</option>
+                                <option value="UTC+8">China Standard Time (UTC+8)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="settings__form-group">
+                            <label for="currency" class="settings__label">Currency</label>
+                            <select id="currency" class="settings__select">
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                                <option value="CNY">CNY (¥)</option>
+                                <option value="JPY">JPY (¥)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="settings__section">
+                        <h3 class="settings__section-title">Security</h3>
+                        
+                        <div class="settings__form-group">
+                            <button type="button" id="change-password-btn" class="button button--secondary">Change Password</button>
+                            <p class="settings__description">Update your account password</p>
+                        </div>
+                        
+                        <div class="settings__form-group">
+                            <button type="button" id="two-factor-btn" class="button button--secondary">Enable Two-Factor Authentication</button>
+                            <p class="settings__description">Add an extra layer of security to your account</p>
+                        </div>
+                    </div>
+
+                    <div class="settings__section settings__section--danger">
+                        <h3 class="settings__section-title">Danger Zone</h3>
+                        
+                        <div class="settings__form-group">
+                            <button type="button" id="delete-account-btn" class="button button--danger">Delete Account</button>
+                            <p class="settings__description">Permanently delete your account and all associated data</p>
+                        </div>
+                    </div>
+
+                    <div class="settings__actions">
+                        <button type="button" id="reset-btn" class="button button--secondary">Reset to Defaults</button>
+                        <button type="submit" class="button button--primary">Save Settings</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2023 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-modal-form" class="login__form">
+                <div class="login__form-group">
+                    <label for="login-email" class="login__label">Email</label>
+                    <input type="email" id="login-email" name="email" class="login__input" required>
+                </div>
+                
+                <div class="login__form-group">
+                    <label for="login-password" class="login__label">Password</label>
+                    <input type="password" id="login-password" name="password" class="login__input" required>
+                </div>
+                
+                <div class="login__actions">
+                    <button type="submit" class="button button--primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

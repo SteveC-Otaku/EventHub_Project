@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer Login - EventHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/organizer-login.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <h1>EventHub</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Home</a></li>
+                <li class="header__nav-item"><a href="user-dashboard.html" class="header__nav-link">My Events</a></li>
+                <li class="header__nav-item"><a href="organizer-login.html" class="header__nav-link active">Organizer Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="login">
+            <div class="login__container">
+                <h2 class="login__title">Organizer Login</h2>
+                
+                <!-- Demo accounts section -->
+                <div class="demo-accounts">
+                    <h3 class="demo-accounts__title">Demo Organizer Accounts</h3>
+                    <p class="demo-accounts__subtitle">Quick login for demonstration</p>
+                    <div class="demo-accounts__buttons">
+                        <button type="button" id="demo-tech-organizer" class="button button--demo">
+                            <span class="demo-button__icon">💻</span>
+                            <span class="demo-button__text">
+                                <strong>Tech Events Inc.</strong>
+                                <small>tech@demo.com</small>
+                            </span>
+                        </button>
+                        <button type="button" id="demo-music-organizer" class="button button--demo">
+                            <span class="demo-button__icon">🎵</span>
+                            <span class="demo-button__text">
+                                <strong>Music Festivals LLC</strong>
+                                <small>music@demo.com</small>
+                            </span>
+                        </button>
+                        <button type="button" id="demo-business-organizer" class="button button--demo">
+                            <span class="demo-button__icon">🏢</span>
+                            <span class="demo-button__text">
+                                <strong>Business Network</strong>
+                                <small>business@demo.com</small>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="login-divider">
+                    <span>or login manually</span>
+                </div>
+
+                <form id="login-form" class="login__form">
+                    <div class="login__form-group">
+                        <label for="email" class="login__label">Email</label>
+                        <input type="email" id="email" name="email" class="login__input" placeholder="Enter any email">
+                    </div>
+                    
+                    <div class="login__form-group">
+                        <label for="password" class="login__label">Password</label>
+                        <input type="password" id="password" name="password" class="login__input" placeholder="Enter any password">
+                    </div>
+                    
+                    <div id="login-error" class="login__error"></div>
+                    
+                    <div class="login__actions">
+                        <button type="submit" class="button button--primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2023 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/organizer-login.js"></script>
+</body>
+</html>
